@@ -8,17 +8,22 @@ var Product = function(name, description, price){
 
 var Cart = function(Product){
   this.item = Product;
-  totalPrice = totalPrice + item.price;
+//  totalPrice = totalPrice + item.price;
 }
-/*
-function addToCart()
+
+function addToCart(product)
 {
-  cartObject.item.push(this);
+  cartObject.push(this);
+  console.log(this + "added to Cart");
 
 }
 function removeFromCart(index){
-  cart
+  pName = cartObject.index.name;
+  cartObject.pop[index];
+  return pName + "is removed from Cart";
 }
-
-cartObject =
-*/
+HTCPhone = new Product ("HTC Desire", "3G Phone", 20000);
+cartObject = new Cart(HTCPhone);
+console.log(HTCPhone);
+console.log(cartObject);
+addToCart(HTCPhone);
