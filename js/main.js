@@ -1,6 +1,5 @@
 // Product template
 totalPrice = 0;
-cartObject =[];
 var Product = function(name, description, price){
   this.name = name;
   this.description = description;
