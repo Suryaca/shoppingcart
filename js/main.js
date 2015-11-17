@@ -1,5 +1,6 @@
 // Product template
 totalPrice = 0;
+cartObject =[];
 var Product = function(name, description, price){
   this.name = name;
   this.description = description;
@@ -13,8 +14,10 @@ var Cart = function(Product){
 
 function addToCart(product)
 {
-  cartObject.push(this);
-  console.log(this + "added to Cart");
+  console.log(product);
+  console.log(cartObject);
+  // cartObject.push(product);
+  // console.log( product+ "added to Cart");
 
 }
 function removeFromCart(index){
