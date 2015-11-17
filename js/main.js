@@ -1,31 +1,42 @@
-// Product template
-totalPrice = 0;
-var Product = function(name, description, price){
-  this.name = name;
+var cart = function(){
+  this.items = [];
+  this.price = 0;
+  this.removeFromCartById = function(id){
+    for(var i=0;i<this.items.length;i++){
+      if(this.items[i].id==id)
+        this.items.splice(i,1);
+    }
+  };
+  this.removeFromCartByName = function(name){
+    for(var i=0;i<this.items.length;i++){
+      if(this.items[i].name==name)
+        this.items.splice(i,1);
+    }
+  };
+};
+cartObject = new cart();
+console.log(cartObject.price);
+var product = function(id, name, description, price){
+  this.id = id;
+  this.name =name;
   this.description = description;
   this.price = price;
-}
+  this.addToCart = function(){
+    cartObject.items.push(this);
+    cartObject.price+=this.price;
+  };
+};
 
-var Cart = function(Product){
-  this.item = Product;
-//  totalPrice = totalPrice + item.price;
-}
-
-function addToCart(product)
-{
-  console.log(product);
-  console.log(cartObject);
-  // cartObject.push(product);
-  // console.log( product+ "added to Cart");
-
-}
-function removeFromCart(index){
-  pName = cartObject.index.name;
-  cartObject.pop[index];
-  return pName + "is removed from Cart";
-}
-HTCPhone = new Product ("HTC Desire", "3G Phone", 20000);
-cartObject = new Cart(HTCPhone);
-console.log(HTCPhone);
-console.log(cartObject);
-addToCart(HTCPhone);
+var laptop = new product(1, "Dell","Dell 128gb SSD 4GB RAM",2000);
+laptop.addToCart();
+//console.log(cartObject);
+laptop.addToCart();
+laptop.addToCart();
+laptop.addToCart();
+console.log(cartObject.items.length);
+cartObject.removeFromCartById(1);
+console.log(cartObject.items);
+cartObject.removeFromCartById(1);
+console.log(cartObject.items);
+cartObject.removeFromCartByName("Dell")
+console.log(cartObject.items);
